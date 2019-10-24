@@ -1,7 +1,7 @@
 <div class="sidebar">
     <nav class="sidebar-nav">
         <ul class="nav">
-            <li class="nav-title">Navigation</li>
+            <li class="nav-title">USER</li>
 
             <li class="nav-item">
                 <a href="index.html" class="nav-link active">
@@ -10,38 +10,12 @@
             </li>
 
             <li class="nav-item nav-dropdown">
-                <a href="#" class="nav-link nav-dropdown-toggle">
-                    <i class="icon icon-target"></i> Layouts <i class="fa fa-caret-left"></i>
+                <a href="#" class="nav-link">
+                    <i class="icon icon-book-open"></i> Comments
                 </a>
-
-                <ul class="nav-dropdown-items">
-                    <li class="nav-item">
-                        <a href="layouts-normal.html" class="nav-link">
-                            <i class="icon icon-target"></i> Normal
-                        </a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a href="layouts-fixed-sidebar.html" class="nav-link">
-                            <i class="icon icon-target"></i> Fixed Sidebar
-                        </a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a href="layouts-fixed-header.html" class="nav-link">
-                            <i class="icon icon-target"></i> Fixed Header
-                        </a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a href="layouts-hidden-sidebar.html" class="nav-link">
-                            <i class="icon icon-target"></i> Hidden Sidebar
-                        </a>
-                    </li>
-                </ul>
             </li>
 
-            <li class="nav-item nav-dropdown">
+            <!--<li class="nav-item nav-dropdown">
                 <a href="#" class="nav-link nav-dropdown-toggle">
                     <i class="icon icon-energy"></i> UI Kits <i class="fa fa-caret-left"></i>
                 </a>
@@ -115,16 +89,27 @@
                 <a href="tables.html" class="nav-link">
                     <i class="icon icon-grid"></i> Tables
                 </a>
-            </li>
+            </li>-->
 
-            <li class="nav-title">More</li>
+            <li class="nav-title">AUTHOR</li>
 
             <li class="nav-item nav-dropdown">
-                <a href="#" class="nav-link nav-dropdown-toggle">
-                    <i class="icon icon-umbrella"></i> Pages <i class="fa fa-caret-left"></i>
+                <a href="#" class="nav-link">
+                    <i class="icon icon-speedometer"></i> Dashboard
                 </a>
+            </li>
 
-                <ul class="nav-dropdown-items">
+            <li class="nav-item nav-dropdown">
+                <a href="#" class="nav-link">
+                    <i class="icon icon-paper-clip"></i> Posts
+                </a>
+            </li>
+            <li class="nav-item nav-dropdown">
+                <a href="#" class="nav-link">
+                    <i class="icon icon-book-open"></i> Comments
+                </a>
+            </li>
+                <!--<ul class="nav-dropdown-items">
                     <li class="nav-item">
                         <a href="blank.html" class="nav-link">
                             <i class="icon icon-umbrella"></i> Blank Page
@@ -167,7 +152,34 @@
                         </a>
                     </li>
                 </ul>
+            </li>-->
+
+            <li class="nav-title">ADMIN</li>
+
+            <li class="nav-item nav-dropdown">
+                <a href="#" class="nav-link">
+                    <i class="icon icon-speedometer"></i> Dashboard
+                </a>
             </li>
+
+            <li class="nav-item nav-dropdown">
+                <a href="#" class="nav-link">
+                    <i class="icon icon-paper-clip"></i> Posts
+                </a>
+            </li>
+
+            <li class="nav-item nav-dropdown">
+                <a href="#" class="nav-link">
+                    <i class="icon icon-book-open"></i> Comments
+                </a>
+            </li>
+
+            <li class="nav-item nav-dropdown">
+                <a href="#" class="nav-link">
+                    <i class="icon icon-user"></i> Users
+                </a>
+            </li>
+
         </ul>
     </nav>
 </div>
