@@ -4,13 +4,13 @@
             <li class="nav-title">USER</li>
 
             <li class="nav-item">
-                <a href="index.html" class="nav-link active">
+                <a href="{{route('userDashboard')}}" class="nav-link {{Route::CurrentRouteName() == 'userDashboard' ? 'active' : ''}}">
                     <i class="icon icon-speedometer"></i> Dashboard
                 </a>
             </li>
 
             <li class="nav-item nav-dropdown">
-                <a href="#" class="nav-link">
+                <a href="{{route('userComments')}}" class="nav-link {{Route::CurrentRouteName() == 'userComments' ? 'active' : ''}}">
                     <i class="icon icon-book-open"></i> Comments
                 </a>
             </li>
@@ -91,21 +91,22 @@
                 </a>
             </li>-->
 
+            @if(Auth::user()->author == true)
             <li class="nav-title">AUTHOR</li>
 
             <li class="nav-item nav-dropdown">
-                <a href="#" class="nav-link">
+                <a href="{{route('authorDashboard')}}" class="nav-link {{Route::CurrentRouteName() == 'authorDashboard' ? 'active' : ''}}">
                     <i class="icon icon-speedometer"></i> Dashboard
                 </a>
             </li>
 
             <li class="nav-item nav-dropdown">
-                <a href="#" class="nav-link">
+                <a href="{{route('authorPosts')}}" class="nav-link {{Route::CurrentRouteName() == 'authorPosts' ? 'active' : ''}}">
                     <i class="icon icon-paper-clip"></i> Posts
                 </a>
             </li>
             <li class="nav-item nav-dropdown">
-                <a href="#" class="nav-link">
+                <a href="{{route('authorComments')}}" class="nav-link {{Route::CurrentRouteName() == 'authorComments' ? 'active' : ''}}">
                     <i class="icon icon-book-open"></i> Comments
                 </a>
             </li>
@@ -153,33 +154,35 @@
                     </li>
                 </ul>
             </li>-->
+            @endif
 
+            @if(Auth::user()->admin == true)
             <li class="nav-title">ADMIN</li>
 
             <li class="nav-item nav-dropdown">
-                <a href="#" class="nav-link">
+                <a href="{{route('adminDashboard')}}" class="nav-link {{Route::CurrentRouteName() == 'adminDashboard' ? 'active' : ''}}">
                     <i class="icon icon-speedometer"></i> Dashboard
                 </a>
             </li>
 
             <li class="nav-item nav-dropdown">
-                <a href="#" class="nav-link">
+                <a href="{{route('adminPosts')}}" class="nav-link {{Route::CurrentRouteName() == 'adminPosts' ? 'active' : ''}}">
                     <i class="icon icon-paper-clip"></i> Posts
                 </a>
             </li>
 
             <li class="nav-item nav-dropdown">
-                <a href="#" class="nav-link">
+                <a href="{{route('adminComments')}}" class="nav-link {{Route::CurrentRouteName() == 'adminComments' ? 'active' : ''}}">
                     <i class="icon icon-book-open"></i> Comments
                 </a>
             </li>
 
             <li class="nav-item nav-dropdown">
-                <a href="#" class="nav-link">
+                <a href="{{route('adminUsers')}}" class="nav-link {{Route::CurrentRouteName() == 'adminUsers' ? 'active' : ''}}">
                     <i class="icon icon-user"></i> Users
                 </a>
             </li>
-
+            @endif
         </ul>
     </nav>
 </div>

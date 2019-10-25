@@ -3,7 +3,7 @@
         <i class="fa fa-bars"></i>
     </a>
 
-    <a class="navbar-brand" href="#">
+    <a class="navbar-brand" href="{{url('/')}}">
         <img src="{{asset('admin/assets/imgs/logo.png')}}" alt="logo">
     </a>
 
@@ -26,6 +26,10 @@
                 <span class="badge badge-pill badge-danger">5</span>
             </a>
         </li>-->
+
+        @if(Auth::user()->author == true)
+            <a href="{{route('newPost')}}" class="btn btn-primary mr-3">New Post</a>
+        @endif
 
         <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
