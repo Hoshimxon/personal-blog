@@ -17,6 +17,19 @@
                         <div class="card-header bg-light">
                             Account Settings
                         </div>
+
+                        @if(session('error'))
+                            <div class="alert alert-danger">
+                                {{ session('error') }}
+                            </div>
+                        @endif
+
+                        @if(session('success'))
+                            <div class="alert alert-success">
+                                {{ session('success') }}
+                            </div>
+                        @endif
+
                         @if($errors->any())
                             <div class="alert alert-danger">
                                 <ul>
@@ -26,6 +39,7 @@
                                 </ul>
                             </div>
                         @endif
+
                         <form action="{{route('userProfilePost')}}" method="POST">
                             @csrf
                             <div class="card-body">
