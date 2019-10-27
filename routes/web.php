@@ -34,12 +34,22 @@ Route::prefix('author')->group(function () {
     Route::get('posts', 'AuthorController@posts')->name('authorPosts');
     Route::get('posts/new', 'AuthorController@newPost')->name('newPost');
     Route::post('posts/new', 'AuthorController@createPost')->name('createPost');
+    Route::get('post/{id}/edit', 'AuthorController@postEdit')->name('postEdit');
+    Route::post('post/{id}/edit', 'AuthorController@postEditPost')->name('postEditPost');
+    Route::post('post/{id}/delete', 'AuthorController@deletePost')->name('deletePost');
     Route::get('comments', 'AuthorController@comments')->name('authorComments');
 });
 
 Route::prefix('admin')->group(function (){
     Route::get('dashboard', 'AdminController@dashboard')->name('adminDashboard');
     Route::get('posts', 'AdminController@posts')->name('adminPosts');
+    Route::get('post/{id}/edit', 'AdminController@postEdit')->name('adminPostEdit');
+    Route::post('post/{id}/edit', 'AdminController@postEditPost')->name('adminPostEditPost');
+    Route::post('post/{id}/delete', 'AdminController@deletePost')->name('adminDeletePost');
     Route::get('comments', 'AdminController@comments')->name('adminComments');
+    Route::post('comment/{id}/delete', 'AdminController@deleteComment')->name('adminDeleteComment');
     Route::get('users', 'AdminController@users')->name('adminUsers');
+    Route::get('user/{id}/edit', 'AdminController@editUser')->name('adminEditUser');
+    Route::post('user/{id}/edit', 'AdminController@editUserPost')->name('adminEditUserPost');
+    Route::post('user/{id}/delete', 'AdminController@deleteUser')->name('adminDeleteUser');
 });

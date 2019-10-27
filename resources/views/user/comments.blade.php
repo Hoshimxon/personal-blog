@@ -6,7 +6,7 @@
     <div class="content">
         <div class="card">
             <div class="card-header bg-light">
-                Striped Rows
+                User Comments
             </div>
 
             <div class="card-body">
@@ -22,15 +22,14 @@
                         </tr>
                         </thead>
                         <tbody>
-                        @foreach(Auth::user()->comments as $comment)
+                        @foreach($comments as $comment)
                         <tr>
                             <td>{{$comment->id}}</td>
-                            <td class="text-nowrap"><a href="{{route('singlePost', $comment->id)}}">{{$comment->post->title}}</a></td>
+                            <td class="text-nowrap"><a href="{{route('singlePost', $comment->post->id)}}">{{$comment->post->title}}</a></td>
                             <td>{{$comment->content}}</td>
                             <td>{{\Carbon\Carbon::parse($comment->created_at)->diffForHumans()}}</td>
                             <td>
-                                <form id="deleteComment-{{$comment->id}}" action="{{route('deleteComment', $comment->id)}}" method="POST">@csrf</form>
-                                <button type="button" class="btn btn-danger" onclick="document.getElementById('deleteComment-{{$comment->id}}').submit()">X</button>
+                                <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteCommentModal-{{$comment->id}}">X</button>
                             </td>
                         </tr>
                         @endforeach
@@ -41,3 +40,29 @@
         </div>
     </div>
 @endsection
+
+@foreach($comments as $comment)
+    <!-- Modal -->
+    <div class="modal fade" id="deleteCommentModal-{{$comment->id}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">You are about to delete {{$comment->post->title}}</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    Are you sure?
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">No, keep it</button>
+                    <form action="{{route('deleteComment', $comment->id)}}" method="POST" class="mb-0">
+                        @csrf
+                        <button type="submit" class="btn btn-primary">Yes, delete it</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+@endforeach
