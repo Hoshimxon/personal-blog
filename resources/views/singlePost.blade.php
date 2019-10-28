@@ -36,6 +36,20 @@
             <p><small>by {{$comment->user->name}}, on {{date_format($comment->created_at, 'F d, Y')}}</small></p>
             <hr>
             @endforeach
+
+            @if(Auth::check())
+                <form action="{{route('newComment')}}" method="POST">
+                    @csrf
+                    <div class="form-group">
+                        <textarea name="comment" id="" cols="30" rows="10" class="form-control"></textarea>
+                        <input type="hidden" name="post" value="{{$post->id}}">
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-primary">Make comment</button>
+                    </div>
+                </form>
+            @endif
+
         </div>
     </div>
 </article>
